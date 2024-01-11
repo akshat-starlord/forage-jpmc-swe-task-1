@@ -47,11 +47,9 @@ def getRatio(price_a, price_b):
 if __name__ == "__main__":
     for _ in iter(range(N)):
         quotes = json.loads(urllib.request.urlopen(QUERY.format(random.random())).read())
-
         for quote in quotes:
             stock, price_a, price_b = getDataPoint(quote)
             print("Quoted %s at (price_a:%s, price_b:%s)" % (stock, price_a, price_b))
-
             ratio = getRatio(price_a, price_b)
             print("Ratio %s" % ratio)
 
